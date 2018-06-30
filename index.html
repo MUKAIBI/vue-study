@@ -6,16 +6,13 @@
 </head>
 <body>
 <div id="app">
-    <ul>
-        <li v-for="(item, index) in list" v-bind:key="item.id">
-            ID.{{ item.id }} {{ item.name }}  {{ item.hp }}
-        </li>
-    </ul>
+    180度は {{ 180 | radion | round }} ラジアンだよ
 </div>
 
 
 <script src="https://unpkg.com/vue"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@12.1.5"></script>
 <script src="script.js"></script>
 </body>
 </html>

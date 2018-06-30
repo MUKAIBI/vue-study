@@ -1,13 +1,14 @@
 new Vue({
     el: '#app',
     data: {
-        list: []
+        price: 19800
     },
-    created: function() {
-        axios.get('list.json').then(function(response) {
-            this.list = responce.data
-        },bind(this)).catch(function(e) {
-            console.error(e)
-        })
+    filters: {
+        round: function(val) {
+            return Math.round(val * 100) / 100
+        },
+        radion: function(val) {
+            return val * Math.PI / 100
+        }
     }
 })
