@@ -1,14 +1,18 @@
+Vue.component('comp-child', {
+    template: '<button v-on:click="handleClick">イベント発火</button>',
+    methods: {
+        handleClick: function() {
+            this.$emit('childs-event')
+        }
+    }
+})
+
+
 new Vue({
     el: '#app',
-    data: {
-        list: []
-    },
-    watch: {
-        list: function() {
-            console.log('通常', this.$refs.list.offsetHeight)
-            this.$nextTick(function() {
-                console.log('nextTick', this.$refs.list.offsetHeight)
-            })
+    methods: {
+        parentsMethod: function() {
+            alert('イベントをキャッチ！')
         }
     }
 })
