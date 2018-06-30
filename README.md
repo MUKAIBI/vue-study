@@ -1,2 +1,2 @@
-# vue-study
+# Vue.js study
 Vue.js study Repository.
