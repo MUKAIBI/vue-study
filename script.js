@@ -1,14 +1,14 @@
 new Vue({
     el: '#app',
     data: {
-        price: 19800
+        list: []
     },
-    filters: {
-        round: function(val) {
-            return Math.round(val * 100) / 100
-        },
-        radion: function(val) {
-            return val * Math.PI / 100
+    watch: {
+        list: function() {
+            console.log('通常', this.$refs.list.offsetHeight)
+            this.$nextTick(function() {
+                console.log('nextTick', this.$refs.list.offsetHeight)
+            })
         }
     }
 })
