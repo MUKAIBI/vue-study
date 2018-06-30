@@ -1,6 +1,13 @@
 new Vue({
     el: '#app',
     data: {
-        radius: 50
+        list: []
+    },
+    created: function() {
+        axios.get('list.json').then(function(response) {
+            this.list = responce.data
+        },bind(this)).catch(function(e) {
+            console.error(e)
+        })
     }
 })
