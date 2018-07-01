@@ -3,10 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Vue.js</title>
+<style>
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 1s;
+}
+
+.v-leave-active {
+    position: absolute;
+}
+
+.v-enter,
+.v-leave-to {
+    opacity: 0;
+}
+</style>
 </head>
 <body>
 <div id="app">
-    <comp-child v-on:childs-event="parentsMethod"></comp-child>
+    <button v-on:click="count++">切り替え</button>
+    <transition>
+        <div v-bind:key="count">{{ count }}</div>
+    </transition>
 </div>
 
 
